@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>User ID</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor="let item of apisData1; let i = index" >
+    <td>{{item.id}}</td>
+    <td>{{item.userId}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.body}}</td>
+    <td>
+      <button class="edit-btn" (click)="editPost()">Edit</button>
+      <button class="delete-btn" (click)="deletePost(item,i)">Delete</button>
+    </td>
+  </tr>
+</table>
