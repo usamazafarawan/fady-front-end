@@ -19,4 +19,8 @@ export class HeaderComponent {
     this.router.navigate(['/contacts']);
   }
 
+  routeToDataPage(){
+        this.router.navigate(['/table']);
+  }
+
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environemnt';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,16 @@ export class RequestServiceService {
     return  this.http.delete(`https://jsonplaceholder.typicode.com/posts`+`/${id}`);
   }
 
+
+
+  //Node Apis 
+
+  getAllStudentsDataFromNodeApi():Observable<any>{
+        return this.http.get(`${environment.apiUrl}/students/get-all-data`);
+  }
+
+  deleteStudentDataFromNodeApi(id:number):Observable<any>{
+    return  this.http.delete(`${environment.apiUrl}/students/delete-student/${id}`);
+  }
 
 }
