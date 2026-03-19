@@ -50,24 +50,26 @@ this.students = response;
   }
 
 
-  deleteStudent(id:number){
+  deleteStudent(id: number) {
     console.log('id: ', id);
 
+    if (id) {
 
-    this.requestService.deleteStudentDataFromNodeApi(id).subscribe({
-      
-      next:(response)=>{
-        console.log('delete response: ', response); 
+      this.requestService.deleteStudentDataFromNodeApi(id).subscribe({
 
-        this.students = response
-      }
-      ,
-      error:(err)=>{
-        console.log('err: ', err);
-      }
-  })
+        next: (response) => {
+          console.log('delete response: ', response);
 
-  
+          this.students = response
+        }
+        ,
+        error: (err) => {
+          console.log('err: ', err);
+        }
+      })
+    }
+
+
 
   }
 }

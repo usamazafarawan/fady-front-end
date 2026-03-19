@@ -12,14 +12,16 @@
   </thead>
   <tbody>
     <tr *ngFor="let student of students">
-      <td>{{ student.id }}</td>
-      <td>{{ student.name }}</td>
-      <td>{{ student.class }}</td>
-      <td>{{ student.marks }}</td>
+      <td>{{ student?.Id || student?.id }}</td>
+      <td>{{ student?.Name || student?.name }}</td>
+      <td>{{ student?.Class || student?.class}}</td>
+      <td>{{ student?.Marks || student?.marks }}</td>
       <td>
         <!-- <button (click)="editStudent(student)">Edit</button> -->
-        <button (click)="deleteStudent(student.id)">Delete</button>
+        <button (click)="deleteStudent(student?.Id || student?.id)">Delete</button>
         </td>
     </tr>
   </tbody>
 </table>
+
+
