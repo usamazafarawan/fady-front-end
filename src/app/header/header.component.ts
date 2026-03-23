@@ -23,4 +23,12 @@ export class HeaderComponent {
         this.router.navigate(['/table']);
   }
 
+
+  signOut(){
+
+    localStorage.removeItem('USER')
+            this.router.navigate(['/login']);
+
+  }
+
 }

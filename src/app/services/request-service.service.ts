@@ -39,4 +39,16 @@ export class RequestServiceService {
     return  this.http.delete(`${environment.apiUrl}/students/delete-student/${id}`);
   }
 
+   createUserFromNodeApi(data:any):Observable<any>{
+    return  this.http.post(`${environment.apiUrl}/users/create`,data);
+  }
+
+  
+   loginUserFromNodeApi(data:any):Observable<any>{
+    return  this.http.post(`${environment.apiUrl}/users/login`,data);
+  }
+
+
+
+
 }
