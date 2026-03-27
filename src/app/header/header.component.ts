@@ -27,6 +27,7 @@ export class HeaderComponent {
   signOut(){
 
     localStorage.removeItem('USER')
+    localStorage.removeItem("TOKEN")
             this.router.navigate(['/login']);
 
   }

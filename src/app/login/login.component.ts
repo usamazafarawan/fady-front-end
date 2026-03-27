@@ -43,7 +43,11 @@ this.loginForm.markAllAsTouched()
           alert('Loggin Successfully')
 
 
-          localStorage.setItem('USER',JSON.stringify(response.user))
+          // store the token  and user detail 
+          localStorage.setItem('TOKEN',response.token)
+          localStorage.setItem('USER',JSON.stringify(response.user));
+
+          
           this.router.navigate(['/contacts'])
         }
         ,
