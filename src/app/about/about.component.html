@@ -1,0 +1,15 @@
+<app-header> </app-header>
+
+
+<p>about Parent works!</p>
+
+<button (click)="increase()">+</button>
+
+
+<h3>The latest values receiving from the child is {{childValue}}</h3>
+
+<hr>
+<app-child  [parentValue]="parentValue1"  [latestValue]="value"  (valueChange)="OnValueChange($event)"  ></app-child>
+
+
+<app-footer></app-footer>

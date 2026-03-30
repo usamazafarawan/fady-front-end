@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { UserAccountDeatilsComponent } from './user-account-deatils/user-account-deatils.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './auth.interceptor';
+import { AboutComponent } from './about/about.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AuthInterceptor } from './auth.interceptor';
     ContactsComponent,
     SignupComponent,
     LoginComponent,
-    UserAccountDeatilsComponent
+    UserAccountDeatilsComponent,
+    AboutComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

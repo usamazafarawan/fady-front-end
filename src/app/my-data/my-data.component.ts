@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestServiceService } from '../services/request-service.service';
+import { SharedDataService } from '../services/shared-data.service';
 
 @Component({
   selector: 'app-my-data',
@@ -16,7 +17,14 @@ export class MyDataComponent implements OnInit {
   ];
 
 
-  constructor(private requestService: RequestServiceService) {
+  componentValue:number = 0;
+
+
+  constructor(private requestService: RequestServiceService,
+    private sharedDataService:SharedDataService
+
+
+  ) {
     
   }
 
@@ -24,6 +32,21 @@ export class MyDataComponent implements OnInit {
   ngOnInit(): void {
 
     this.fetchStudentsDataFromApi();
+
+
+    this.sharedDataService.sharedValues$.subscribe({
+      next: (value) => {
+        console.log('getting the value from Contact Compioent  ', value);
+        this.componentValue = value
+
+      }
+      ,
+      error: (err) => {
+        console.log('err: ', err);
+
+      }
+    })
+
   }
 
   fetchStudentsDataFromApi(){

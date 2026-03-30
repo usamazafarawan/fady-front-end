@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestServiceService } from '../services/request-service.service';
+import { SharedDataService } from '../services/shared-data.service';
 
 @Component({
   selector: 'app-contacts',
@@ -14,8 +15,13 @@ export class ContactsComponent implements OnInit {
   apisData3:any[] = [];
 
 
+  value:number = 0;
 
-  constructor( private requestServiceService:RequestServiceService){
+
+
+  constructor(private requestServiceService: RequestServiceService,
+    private sharedDataService: SharedDataService
+  ) {
 
   }
 
@@ -65,6 +71,16 @@ export class ContactsComponent implements OnInit {
         } 
       }
     );
+  }
+
+
+  increse(){
+    this.value = this.value + 1;
+    console.log('  this.value: ',   this.value);
+
+
+this.sharedDataService.sharedValues.next(this.value)
+
   }
 
 

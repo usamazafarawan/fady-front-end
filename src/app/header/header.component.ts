@@ -23,6 +23,11 @@ export class HeaderComponent {
         this.router.navigate(['/table']);
   }
 
+  routeToAboutPage(){
+            this.router.navigate(['/about']);
+
+  }
+
 
   signOut(){
 
