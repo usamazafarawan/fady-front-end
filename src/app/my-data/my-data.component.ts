@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestServiceService } from '../services/request-service.service';
 import { SharedDataService } from '../services/shared-data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-my-data',
@@ -21,10 +22,25 @@ export class MyDataComponent implements OnInit {
 
 
   constructor(private requestService: RequestServiceService,
-    private sharedDataService:SharedDataService
-
-
+    private sharedDataService:SharedDataService,
+    private route:ActivatedRoute
   ) {
+
+    this.route.queryParams.subscribe({
+      next:(params)=>{
+        console.log('params:  routes  ', params);
+
+
+        console.log('id1 ',params['id'] )
+                console.log('id2 ',params['id2'] )
+
+
+      }
+      ,
+      error:(err)=>{
+        console.log('err: ', err);
+      }
+    })
     
   }
 

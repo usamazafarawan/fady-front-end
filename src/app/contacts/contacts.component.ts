@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestServiceService } from '../services/request-service.service';
 import { SharedDataService } from '../services/shared-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contacts',
@@ -20,7 +21,8 @@ export class ContactsComponent implements OnInit {
 
 
   constructor(private requestServiceService: RequestServiceService,
-    private sharedDataService: SharedDataService
+    private sharedDataService: SharedDataService,
+    private router:Router
   ) {
 
   }
@@ -80,6 +82,23 @@ export class ContactsComponent implements OnInit {
 
 
 this.sharedDataService.sharedValues.next(this.value)
+
+  }
+
+
+
+  passDataByRoutes() {
+
+
+    this.router.navigate(['/table']
+
+      , {
+
+        queryParams: {
+          id: 'test-id-1',
+          id2: 'test-id-2'
+        }
+      });
 
   }
 
